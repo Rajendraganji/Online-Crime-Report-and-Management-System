@@ -1,0 +1,48 @@
+<html>
+<head>
+<script type="text/javascript">
+function validate()
+{ if( document.frm.name.value == "" )
+   {
+     alert( "Please provide your Name!" );
+}
+if( document.frm.mobileno.value == "" )
+   {
+     alert( "Please provide your mobile number" );
+}
+if( document.frm.feedback.value == "" )
+   {
+     alert( "Please post your feedback" );
+}
+
+}
+</script>
+</head>
+<body bgcolor=#A8CD1B>
+<form name="frm" action="feedback.php" method="POST">
+<table cellpadding="2" width="20%"  border=1 align="center"
+cellspacing="2">
+<tr>
+<td colspan=2>
+<center><font size=4><b>Feedback Form</b></font></center>
+</td>
+</tr><tr>
+<td>Name</td>
+<td><input type=text name="name" size="30"></td>
+</tr>
+
+<tr>
+<td>MobileNo</td>
+<td><input type="text" name="phoneno" size="30"></td>
+</tr>
+<tr>
+<td>Feedback</td>
+<td><textarea name="feedback"></textarea></td>
+</tr>
+<tr>
+<td><input type="reset"></td>
+<td colspan="2"><input type="submit" name="submit" value="Submit" onclick="validate()"/></td>
+</tr>
+</table>
+</body>
+</html>
