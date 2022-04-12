@@ -1,0 +1,88 @@
+
+<html>
+<head>
+<title>Registration page</title>
+<center><h1>Create your account<h1></center>
+
+         <style>
+               tr,input,textarea{font-family:"Monotype Corsiva";font-size:30;color:brown;text-align:center}
+               input,textarea{font-size:24;color:blue}
+          </style>
+   <script type="text/javascript">
+         function validate()
+         {
+             if(frm.name.value == "")
+	alert("Name field cannot be empty");
+             if(frm.createpassword.value == "")
+	alert("Password field cannot be empty");
+          
+               if(frm.createpassword.value != frm.confirmpassword.value)
+ 	alert("Password typed incorrectly!");            
+             
+	if(frm.address.value == "")
+		alert("Address field cannot be empty");
+         }
+
+   </script>
+
+  </head>
+  <body bgcolor=#A8CD1B>
+      <br>
+      <br>
+     <form name="frm" method="post" action="register.php">
+      <table border=1 align=center>
+          <tr>
+                <td>username:  </td>
+                <td> 
+	   <input type="text" name="name" />
+                </td>
+          </tr>
+          <tr>
+                <td>create password:  </td>
+                <td> 
+	   <input type="password" name="createpassword" />
+                </td>
+          </tr>
+          <tr>
+                <td> confirm Password:  </td>
+                <td> 
+	   <input type="password" name="confirmpassword" />
+                </td>
+          </tr>
+          <tr>
+                <td>E-mail id:  </td>
+                <td> 
+	   <input type="email" name="email" />
+                </td>
+          </tr>
+          <tr>
+                <td> Phone number:  </td>
+                <td> 
+	   <input type="number" name="Phoneno" />
+                </td>
+          </tr>
+          
+          <tr>
+                <td>Driver License no/Other ID:  </td>
+                <td align=left> 
+	   <input type="number" name="adharno" />
+	   <br>
+	   
+                </td>
+          </tr>
+          <tr>
+                <td> Address:  </td>
+                <td> 
+	   <textarea name="address"></textarea>
+                </td>
+          </tr>
+          <tr>
+                <td> 
+	   <input type="submit" name="submit" value="Submit" onclick="validate()" />
+                </td>
+                
+          </tr>
+     </table>
+    </form>
+  </body>
+</html>

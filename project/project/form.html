@@ -1,0 +1,116 @@
+
+<html>
+<head>
+<title>Registration page</title>
+<center><h1>Create your account<h1></center>
+
+         <style>
+               tr,input,textarea{font-family:"Monotype Corsiva";font-size:30;color:brown;text-align:center}
+               input,textarea{font-size:24;color:blue}
+          </style>
+   <script type="text/javascript">
+         function validate()
+         {
+             if(frm.name.value == "")
+	alert("Name field cannot be empty");
+             if(frm.createpassword.value == "")
+	alert("Password field cannot be empty");
+             usr=frm.name.value;
+             len=usr.length;
+	if(len < 6 && len >=0)
+	alert("Name must contain atleast 6 characters");
+              pwd=frm.createpassword.value;
+              len=pwd.length;
+              if(len < 6 && len >= 0)
+	alert("Password must contain atleast 6 characters");      
+              for( x in usr)
+              {   ch=usr.charCodeAt(x);
+                   if(ch < 65 || (ch > 90 && ch < 97) || ch> 122 )
+	{
+                     alert("invalid UserName");
+	    break;
+                  }
+              }
+              var regex_pwd=/([_]|[a-z]|[A-Z])([_][a-z][A-Z][0-9])*/g;
+              if((pwd.match(regex_pwd))==null)
+	alert("Invalid Password");
+               if(frm.createpassword.value != frm.confirmpassword.value)
+ 	alert("Password typed incorrectly!");            
+              	
+             pnum=frm.Phoneno.value;	
+              len=pnum.length;            
+	
+              if(len != 10)
+	alert("Phone number must contain exactly 10 characters");
+	
+              var regex_pno=/([0-9])([0-9])*/g;
+              if((pnum.match(regex_pno))==null)
+	alert("Invalid Phone Number");
+	
+	if(frm.address.value == "")
+		alert("Address field cannot be empty");
+         }
+
+   </script>
+
+  </head>
+  <body bgcolor=yellow>
+      <br>
+      <br>
+     <form name="frm" method="post" action="register1.php">
+      <table border=1 align=center>
+          <tr>
+                <td>username:  </td>
+                <td> 
+	   <input type="text" name="name" />
+                </td>
+          </tr>
+          <tr>
+                <td>create password:  </td>
+                <td> 
+	   <input type="password" name="createpassword" />
+                </td>
+          </tr>
+          <tr>
+                <td> confirm Password:  </td>
+                <td> 
+	   <input type="password" name="confirmpassword" />
+                </td>
+          </tr>
+          <tr>
+                <td>E-mail id:  </td>
+                <td> 
+	   <input type="email" name="email" />
+                </td>
+          </tr>
+          <tr>
+                <td> Phone number:  </td>
+                <td> 
+	   <input type="text" name="Phoneno" />
+                </td>
+          </tr>
+          
+          <tr>
+                <td>adhar number:  </td>
+                <td align=left> 
+	   <input type="text" name="adharno" />
+	   <br>
+	   
+                </td>
+          </tr>
+          <tr>
+                <td> Address:  </td>
+                <td> 
+	   <textarea name="address"></textarea>
+                </td>
+          </tr>
+          <tr>
+                <td> 
+	   <input type="submit" name="submit" value="Submit" onclick="validate()" />
+                </td>
+                
+          </tr>
+     </table>
+    </form>
+  </body>
+</html>
